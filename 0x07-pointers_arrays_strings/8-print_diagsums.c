@@ -1,5 +1,5 @@
 #include "main.h"
-#include "studio.h"
+#include <studio.h>
 /**
  *print_diagsums - prints sum of two diagonals of a square.
  *@a: pointer to array.
