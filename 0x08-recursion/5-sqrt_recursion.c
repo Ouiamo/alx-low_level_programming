@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- *helperFunction -checks if sqrt of number exists
+ *helperFunction - checks if sqrt of number exists
  *@num: number.
- *@pSqrt: possible sqrt of number.
+ *@pSqrt: poissible sqrt of number.
  *
- *Return:sqrt of number to -1 for error.
+ *Return: sqrt of number to -1 for error.
  */
 int helperFunction(int num, int pSqrt)
 {
