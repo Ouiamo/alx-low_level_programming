@@ -1,24 +1,39 @@
 #include "main.h"
-
 /**
- * wildcmp - compares two strings.
- *
- * @s1: string 1.
- *
- * @s2: string 2. It can contains a * as a special character.
- *
- * Return: 1 if are identical, 0 if not.
+ * _strlen_recursion - Prints the length of a string.
+ * @s: the string to be printed
+ * Return: the length of string
  */
-
-int wildcmp(char *s1, char *s2)
+int _strlen_recursion(char *s)
 {
-	if (s2 == '*' && *(s2 + 1) != '\0' && *s1 == '\0')
-		return (0);
-	if (*s1 == '\0' && *s2 == '\0')
-		return (1);
-	if (*s1 == *s2)
-		return (wildcmp(s1 + 1, s2 + 1));
-	if (s2 == '*')
-		return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2));
+	if (s[0] != '\0')
+		return (1 + _strlen_recursion(s + 1));
 	return (0);
+}
+/**
+ * pal_checker - check if s is palindrome.
+ * @s: string base address.
+ * @i: left index.
+ * @j: rigth index.
+ * Return: 1 if s is palindrome, 0 otherwise.
+ */
+int pal_checker(char *s, int i, int j)
+{
+	if (s[i] == s[j])
+		if (i > j / 2)
+			return (1);
+		else
+			return (pal_checker(s, i + 1, j - 1));
+	else
+		return (0);
+}
+/**
+ * is_palindrome - check if s is palindrome
+ * @s: base address for string.
+ *
+ * Return: 1 if n is prime, 0 otherwise.
+ */
+int is_palindrome(char *s)
+{
+	return (pal_checker(s, 0, _strlen_recursion(s) - 1));
 }
