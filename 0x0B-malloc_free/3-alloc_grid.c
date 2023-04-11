@@ -1,4 +1,4 @@
-#include "main,h"
+#include "main.h"
 #include <stdlib.h>
 /**
  * alloc_grid - create a matrix using malloc
