@@ -1,16 +1,36 @@
+#include "maim.h"
 #include <stdlib.h>
 /**
-  * malloc_checked - allocates memory using malloc.
-  * @b: size of memory to be allocated.
+  *create_array - creates an array of chars and initializes it with
+  *a specific char.
+  *@size: size of array.
+  *@c: char to initialize array with.
   *
-  * Return: pointer to allocated memory.
+  *Return: NULL if it fails or
+  *Pointer to array.
   */
-void *malloc_checked(unsigned int b)
+char *create_array(unsigned int size, char c)
 {
-	void *p = malloc(b);
+	char *arr;
+	unsigned int i;
 
-	if (p == NULL)
-		exit(98);
+	if (size == 0)
+	{
+		return (NULL);
+	}
 
-	return (p);
+	arr = malloc(sizeof(char) * size);
+
+	/* check if malloc was successful */
+
+	if (arr == NULL)
+		return (NULL);
+
+	for (i = 0; i < size; i++)
+	{
+		arr[i] = c;
+	}
+
+	return (arr);
+
 }
