@@ -5,7 +5,7 @@
   *
   * Return: pointer to allocated memory.
   */
-void *malloc_checked*(unsigend int b)
+void *malloc_checked(unsigend int b)
 {
 	void *p = malloc(b);
 
